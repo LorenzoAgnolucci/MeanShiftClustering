@@ -11,7 +11,7 @@
 #include <cmath>
 
 
-float euclideanDistance(Point x, Point y){
+float euclideanDistance(const Point &x, const Point &y){
     if (x.getNumDimensions() != y.getNumDimensions()){
         std::cout << "The points have a different number of dimensions" << std::endl;
         return 0;
