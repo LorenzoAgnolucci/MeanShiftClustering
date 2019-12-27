@@ -2,8 +2,8 @@
 // Created by lorenzo on 19/12/19.
 //
 
-#ifndef MIDTERM_PARALLEL_COMPUTING_UTILS_H
-#define MIDTERM_PARALLEL_COMPUTING_UTILS_H
+#ifndef MEANSHIFTCLUSTERING_UTILS_H
+#define MEANSHIFTCLUSTERING_UTILS_H
 
 #include "Point.h"
 
@@ -24,9 +24,9 @@ float euclideanDistance(Point x, Point y){
 }
 
 
-float gaussian(float distance, float bandwidth){
-    return std::exp(-(distance * distance) / bandwidth);
+float gaussian_kernel(float distance, float bandwidth){
+    return std::exp(-(distance * distance) / (2 * bandwidth * bandwidth));
 }
 
 
-#endif //MIDTERM_PARALLEL_COMPUTING_UTILS_H
+#endif //MEANSHIFTCLUSTERING_UTILS_H
