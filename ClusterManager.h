@@ -6,8 +6,25 @@
 #define MEANSHIFTCLUSTERING_CLUSTERMANAGER_H
 
 
+#include <vector>
+
+#include "Cluster.h"
+
 class ClusterManager {
 
+public:
+
+    ClusterManager(std::vector<Point> &originalPoints, std::vector<Point> &shiftedPoints, float clusterEps);
+
+    std::vector<Cluster> buildClusters();
+
+    int getNumClusters();
+
+private:
+    std::vector<Point> originalPoints;
+    std::vector<Point> shiftedPoints;
+    std::vector<Cluster> clusters;
+    float clusterEps;
 };
 
 
