@@ -6,12 +6,11 @@
 #define MEANSHIFTCLUSTERING_MEANSHIFT_H
 
 #include "Point.h"
+#include "Utils.h"
 
-#include <vector>
-
-#define RADIUS 0.5
+#define RADIUS 3
 #define MAX_ITERATIONS 5
-#define SHIFTING_EPS 0.01
+#define SHIFTING_EPS 0.04
 
 std::vector<Point> meanShift(const std::vector<Point> &points, float bandwidth);
 
