@@ -11,22 +11,10 @@
 #include <cmath>
 
 
-float euclideanDistance(const Point &x, const Point &y){
-    if (x.getNumDimensions() != y.getNumDimensions()){
-        std::cout << "The points have a different number of dimensions" << std::endl;
-        return 0;
-    }
-    float dist = 0.0;
-    for (auto i = 0; i < x.getNumDimensions(); i++){
-        dist += x.getValues()[i] - y.getValues()[i];
-    }
-    return std::sqrt(dist);
-}
+float euclideanDistance(const Point &x, const Point &y);
 
 
-float gaussian_kernel(float distance, float bandwidth){
-    return std::exp(-(distance * distance) / (2 * bandwidth * bandwidth));
-}
+float gaussian_kernel(float distance, float bandwidth);
 
 
 #endif //MEANSHIFTCLUSTERING_UTILS_H
