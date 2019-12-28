@@ -13,10 +13,16 @@ class Point {
 public:
     explicit Point(std::vector<float> values) : values(std::move(values)) {}
 
-
     explicit Point(const int numDimensions){
         this->values = std::vector<float>(numDimensions, 0);
     }
+
+    Point(std::initializer_list<float> values) {
+        this->values.assign(values);
+    }
+
+
+    Point() = default;
 
     int getNumDimensions() const {
         return values.size();
