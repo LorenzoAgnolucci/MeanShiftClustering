@@ -37,3 +37,7 @@ std::vector<Cluster> ClusterManager::buildClusters(){
 int ClusterManager::getNumClusters(){
     return clusters.size();
 }
+
+const std::vector<Cluster> &ClusterManager::getClusters() const {
+    return clusters;
+}

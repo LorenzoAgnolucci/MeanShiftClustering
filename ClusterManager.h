@@ -20,6 +20,8 @@ public:
 
     int getNumClusters();
 
+    const std::vector<Cluster> &getClusters() const;
+
 private:
     std::vector<Point> originalPoints;
     std::vector<Point> shiftedPoints;
