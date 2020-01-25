@@ -13,6 +13,8 @@ std::vector<Point> meanShift(const std::vector<Point> &points, float bandwidth){
     std::vector<Point> shiftedPoints = points;
     std::vector<bool> still_shifting = std::vector<bool>(points.size(), true);
     while (!std::none_of(still_shifting.begin(), still_shifting.end(), [](bool v){return v;}) && numIterations <= MAX_ITERATIONS) {
+#pragma omp parallel for default(none) shared(points, bandwidth, still_shifting, shiftedPoints) schedule(dynamic)
+
         for (int i = 0; i < points.size(); ++i) {
             if (!still_shifting[i]) {
                 continue;
