@@ -19,14 +19,15 @@ std::vector<Cluster> ClusterManager::buildClusters(){
         auto iterEnd = clusters.end();
         while(iter != iterEnd){
             if (euclideanDistance(iter->getCentroid(), shiftedPoints[i]) <= clusterEps){
-                iter->addPoint(originalPoints[i]);
+                iter->addOriginalPoint(originalPoints[i]);
+                iter->addShiftedPoint(shiftedPoints[i]);
                 break;
             }
             iter++;
         }
         if(iter == iterEnd){
             Cluster newCluster(shiftedPoints[i]);
-            newCluster.addPoint(originalPoints[i]);
+            newCluster.addOriginalPoint(originalPoints[i]);
             clusters.push_back(newCluster);
         }
     }

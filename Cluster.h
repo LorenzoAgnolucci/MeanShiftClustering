@@ -7,6 +7,7 @@
 
 
 #include <vector>
+#include <iostream>
 
 #include "Point.h"
 
@@ -16,22 +17,35 @@ public:
 
     explicit Cluster(Point &centroid) {
         this->centroid = std::move(centroid);
+        this->shiftedPoints.push_back(this->centroid);
     }
 
-    void addPoint(const Point &point){
-        points.push_back(point);
+    void addOriginalPoint(const Point &point){
+        originalPoints.push_back(point);
     }
 
-    const std::vector<Point> &getPoints() const {
-        return points;
+    void addShiftedPoint(const Point &point){
+        shiftedPoints.push_back(point);
+        computeCentroid();
+    }
+
+    const std::vector<Point> &getShiftedPoints() const {
+        return shiftedPoints;
+    }
+
+    const std::vector<Point> &getOriginalPoints() const {
+        return originalPoints;
     }
 
     const Point &getCentroid() const {
         return centroid;
     }
 
+    void computeCentroid();
+
 private:
-    std::vector<Point> points;
+    std::vector<Point> originalPoints;
+    std::vector<Point> shiftedPoints;
     Point centroid;
 };
 
