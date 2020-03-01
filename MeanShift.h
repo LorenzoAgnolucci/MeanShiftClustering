@@ -9,10 +9,10 @@
 #include "Utils.h"
 
 #define RADIUS 3
-#define MAX_ITERATIONS 5
-#define SHIFTING_EPS 0.04
+#define MAX_ITERATIONS 10
+#define SHIFTING_EPS 0.004
 
-std::vector<Point> meanShift(const std::vector<Point> &points, float bandwidth);
+std::vector<Point> meanShift(const std::vector<Point> &points, float bandwidth, int numThreads=1);
 
 Point shiftPoint(const Point &oldPoint, const std::vector<Point> &allPoints, float bandwidth);
 
