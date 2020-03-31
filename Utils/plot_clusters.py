@@ -1,7 +1,3 @@
-import os
-import sys
-import subprocess
-
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -11,7 +7,7 @@ EXECUTABLE = '../MeanShift/cmake-build-releasepar/meanshift'
 
 
 def main():
-    output_file = "/home/lorenzo/CLionProjects/MeanShiftClustering/output"
+    output_file = "/output"
 
     data = np.genfromtxt('{}.csv'.format(output_file), delimiter=',')
     num_clusters = int(np.max(data[:, -1] + 1))
@@ -31,7 +27,7 @@ def main():
         for cluster in clusters:
             ax.scatter(cluster[:, 0], cluster[:, 1], cluster[:, 2], s=3)
     plt.show()
-    os.remove('{}.csv'.format(output_file))
+    # os.remove('{}.csv'.format(output_file))
 
 
 if __name__ == '__main__':
