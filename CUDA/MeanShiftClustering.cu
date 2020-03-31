@@ -91,7 +91,7 @@ __global__ void TilingMeanShift(float* shiftedPoints, const float* __restrict__ 
 			float3 shiftedPoint = make_float3(x, y, z);
 
 			for(int i = 0; i < TILE_WIDTH; i++){
-				//if (tile[i][0] != 0.0 && tile[i][1] != 0.0 && tile[i][2] != 0.0) {
+				if (tile[i][0] != 0.0 && tile[i][1] != 0.0 && tile[i][2] != 0.0) {
 					float3 originalPoint = make_float3(tile[i][0], tile[i][1], tile[i][2]);
 					float3 difference = shiftedPoint - originalPoint;
 					float squaredDistance = dot(difference, difference);
@@ -100,7 +100,7 @@ __global__ void TilingMeanShift(float* shiftedPoints, const float* __restrict__ 
 						newPosition += originalPoint * weight;
 						totalWeight += weight;
 					}
-				//}
+				}
 			}
 		}
 		__syncthreads();
