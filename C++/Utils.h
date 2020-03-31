@@ -1,7 +1,3 @@
-//
-// Created by lorenzo on 19/12/19.
-//
-
 #ifndef MEANSHIFTCLUSTERING_UTILS_H
 #define MEANSHIFTCLUSTERING_UTILS_H
 
@@ -10,11 +6,14 @@
 
 #include <iostream>
 #include <cmath>
+#include <fstream>
+#include <sstream>
+#include <experimental/filesystem>
 
 
 float euclideanDistance(const Point &x, const Point &y);
 
-float gaussian_kernel(float distance, float bandwidth);
+float gaussianKernel(float distance, float bandwidth);
 
 std::vector<Point> readPointsFromCSV(const std::string& fileName);
 

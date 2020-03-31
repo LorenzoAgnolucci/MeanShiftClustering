@@ -1,7 +1,3 @@
-//
-// Created by lorenzo on 19/12/19.
-//
-
 #ifndef MEANSHIFTCLUSTERING_POINT_H
 #define MEANSHIFTCLUSTERING_POINT_H
 

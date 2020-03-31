@@ -1,7 +1,3 @@
-//
-// Created by lorenzo on 01/03/20.
-//
-
 #include "SpeedupTests.h"
 
 
@@ -19,6 +15,7 @@ void testDifferentSize(const std::string& inputPath, const std::string& outputPa
         test(BANDWIDTH, inputPath + fileName, outputClustersFileName + "out_" + fileName, outputPath + "ResultsSpeedUpTests");
         std::cout << "" << std::endl;
     }
+
     std::cout << "---------------------------------------------------------------------------------------" << std::endl;
     std::cout << "\n\n" << std::endl;
 }

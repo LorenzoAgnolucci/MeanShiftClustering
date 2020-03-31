@@ -1,7 +1,3 @@
-//
-// Created by lorenzo on 26/02/20.
-//
-
 #ifndef MEANSHIFTCLUSTERING_SPEEDUPTESTS_H
 #define MEANSHIFTCLUSTERING_SPEEDUPTESTS_H
 
@@ -17,9 +13,9 @@
 #include "MeanShift.h"
 
 
-#define BANDWIDTH 1.0
+#define BANDWIDTH 2
 #define CLUSTER_EPS 1.0
-#define NUM_TEST_ITERATIONS 1
+#define NUM_TEST_ITERATIONS 5
 
 
 void testDifferentSize(const std::string& inputPath, const std::string& outputPath);

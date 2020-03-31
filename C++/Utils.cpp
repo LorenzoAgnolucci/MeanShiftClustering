@@ -1,11 +1,3 @@
-//
-// Created by lorenzo on 27/12/19.
-//
-
-#include <fstream>
-#include <sstream>
-#include <experimental/filesystem>
-
 #include "Utils.h"
 
 float euclideanDistance(const Point &x, const Point &y) {
@@ -20,7 +12,7 @@ float euclideanDistance(const Point &x, const Point &y) {
     return std::sqrt(dist);
 }
 
-float gaussian_kernel(float distance, float bandwidth){
+float gaussianKernel(float distance, float bandwidth){
     return std::exp(-(distance * distance) / (2 * powf(bandwidth, 2)));
 }
 
